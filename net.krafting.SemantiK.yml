@@ -6,7 +6,6 @@ command: SemantiK.py
 finish-args:
   - --share=ipc
   - --device=dri
-  - --share=network
   - --socket=wayland
   - --socket=fallback-x11
 
@@ -72,6 +71,6 @@ modules:
         sha256: d51f3259d1f6fe12155a447623a82695c6d72916b1b61e150e2715c034b6c880
       - type: git
         url: https://gitlab.com/Krafting/semantik-gtk
-        tag: '1.0.3'
+        tag: '1.0.4'
         commit: 540a0d37bf1acc5a1549c60e5245488a9264bb81
 
