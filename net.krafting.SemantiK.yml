@@ -72,5 +72,5 @@ modules:
       - type: git
         url: https://gitlab.com/Krafting/semantik-gtk
         tag: '1.0.4'
-        commit: 540a0d37bf1acc5a1549c60e5245488a9264bb81
+        commit: 48cb045654e7c9430ca6ad6a3bc0051515cc2ced
 
