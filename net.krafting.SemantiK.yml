@@ -9,6 +9,17 @@ finish-args:
   - --socket=wayland
   - --socket=fallback-x11
 
+add-extensions:
+  net.krafting.SemantiK.Lang:
+    versions: 1.0.0
+    directory: share/extra
+    subdirectories: true
+    no-autodownload: true
+    autodelete: true
+
+cleanup-commands:
+  - mkdir -p /app/share/extra
+
 modules:
   - name: OpenBLAS
     buildsystem: cmake-ninja
@@ -60,8 +71,8 @@ modules:
     buildsystem: simple
     build-commands:
       - install -Dm755 SemantiK.py /app/bin/SemantiK.py
-      - install -Dm 0644 word_lists/11000_mot_francais.list  /app/word_lists/francais.list
-      - install -Dm 0644 frWac_non_lem_no_postag_no_phrase_200_cbow_cut100.bin  /app/models/frWac_non_lem_no_postag_no_phrase_200_cbow_cut100.bin
+      - install -Dm 0644 word_lists/11000_mot_francais.list  /app/default/French/words.list
+      - install -Dm 0644 frWac_non_lem_no_postag_no_phrase_200_cbow_cut100.bin  /app/default/French/model.bin
       - install -Dm 0644 net.krafting.SemantiK.desktop  /app/share/applications/net.krafting.SemantiK.desktop
       - install -Dm 0644 net.krafting.SemantiK.metainfo.xml  /app/share/metainfo/net.krafting.SemantiK.metainfo.xml
       - install -Dm 0644 images/net.krafting.SemantiK.png /app/share/icons/hicolor/256x256/apps/net.krafting.SemantiK.png
