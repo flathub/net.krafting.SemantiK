@@ -81,6 +81,6 @@ modules:
         sha256: d51f3259d1f6fe12155a447623a82695c6d72916b1b61e150e2715c034b6c880
       - type: git
         url: https://gitlab.com/Krafting/semantik-gtk
-        tag: '1.2.2'
-        commit: 93dee9662a574889e85f858d9fc0fc44180c04ce
+        tag: '1.2.3'
+        commit: 84548f5bcff0fa9d30d41c04ade37d4a93e4df87
 
