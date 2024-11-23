@@ -70,7 +70,9 @@ modules:
     buildsystem: simple
     build-commands:
       - install -Dm755 SemantiK.py /app/bin/SemantiK.py
-      - install -Dm 0644 word_lists/11000_mot_francais.list  /app/default/French/words.list
+      - cp -r locales /app/
+      - cp -r utils /app/bin/
+      - install -Dm 0644 word_lists/French/words.list  /app/default/French/words.list
       - install -Dm 0644 frWac_non_lem_no_postag_no_phrase_200_cbow_cut100.bin  /app/default/French/model.bin
       - install -Dm 0644 net.krafting.SemantiK.desktop  /app/share/applications/net.krafting.SemantiK.desktop
       - install -Dm 0644 net.krafting.SemantiK.metainfo.xml  /app/share/metainfo/net.krafting.SemantiK.metainfo.xml
@@ -81,6 +83,6 @@ modules:
         sha256: d51f3259d1f6fe12155a447623a82695c6d72916b1b61e150e2715c034b6c880
       - type: git
         url: https://gitlab.com/Krafting/semantik-gtk
-        tag: '1.2.3'
-        commit: 84548f5bcff0fa9d30d41c04ade37d4a93e4df87
+        tag: '1.3.0'
+        commit: f2b9446958ca224402bd24fa44c187844efd96cb
 
