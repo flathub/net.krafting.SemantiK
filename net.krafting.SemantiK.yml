@@ -1,6 +1,6 @@
 app-id: net.krafting.SemantiK
 runtime: org.gnome.Platform
-runtime-version: '46'
+runtime-version: '47'
 sdk: org.gnome.Sdk
 command: SemantiK.py
 finish-args:
@@ -83,6 +83,6 @@ modules:
         sha256: d51f3259d1f6fe12155a447623a82695c6d72916b1b61e150e2715c034b6c880
       - type: git
         url: https://gitlab.com/Krafting/semantik-gtk
-        tag: '1.3.0'
-        commit: f2b9446958ca224402bd24fa44c187844efd96cb
+        tag: '1.4.0'
+        commit: 34b53e2b58d733dcb768382c66e371bc04a88e95
 
