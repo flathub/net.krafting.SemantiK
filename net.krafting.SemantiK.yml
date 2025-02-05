@@ -85,8 +85,7 @@ modules:
         url: https://gitlab.com/Krafting/semantik-gtk
         tag: '1.4.0'
         commit: 34b53e2b58d733dcb768382c66e371bc04a88e95
-        x-checker-data: {
+        x-checker-data:
           type: git,
-          tag-pattern: '^([\\d.]+)$'
-        }
+          tag-pattern: '^([\d.]+)$'
 
