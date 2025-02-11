@@ -24,28 +24,28 @@ modules:
     buildsystem: cmake-ninja
     builddir: true
     config-opts:
-    - -DBUILD_SHARED_LIBS=ON
-    - -DBUILD_TESTING=OFF
+      - -DBUILD_SHARED_LIBS=ON
+      - -DBUILD_TESTING=OFF
     sources:
       - type: git
         url: https://github.com/OpenMathLib/OpenBLAS
-        tag: 'v0.3.26'
+        tag: v0.3.26
         commit: 6c77e5e314474773a7749357b153caba4ec3817d
 
   - name: LAPACK
     buildsystem: cmake-ninja
     builddir: true
     config-opts:
-    - -DCMAKE_BUILD_TYPE=Release
-    - -DBUILD_SHARED_LIBS=ON
-    - -DBUILD_TESTING=OFF
-    - -DCMAKE_Fortran_COMPILER=gfortran
-    - -DLAPACKE=ON
-    - -DCBLAS=ON
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DBUILD_SHARED_LIBS=ON
+      - -DBUILD_TESTING=OFF
+      - -DCMAKE_Fortran_COMPILER=gfortran
+      - -DLAPACKE=ON
+      - -DCBLAS=ON
     sources:
       - type: git
         url: https://github.com/Reference-LAPACK/lapack.git
-        tag: 'v3.12.0'
+        tag: v3.12.0
         commit: 04b044e020a3560ccfa9988c8a80a1fb7083fc2e
 
   - name: meson-python
@@ -53,7 +53,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/mesonbuild/meson-python
-        tag: '0.15.0'
+        tag: 0.15.0
         commit: e847bdd918ba6686d9b0502e9ee6d83d5145ae84
 
   - python3-pyproject_metadata.json
@@ -65,7 +65,7 @@ modules:
   - python3-pybind11.json
 
   - python3-gensim.json
-  
+
   - name: SemantiK
     buildsystem: simple
     build-commands:
@@ -83,6 +83,6 @@ modules:
         sha256: d51f3259d1f6fe12155a447623a82695c6d72916b1b61e150e2715c034b6c880
       - type: git
         url: https://gitlab.com/Krafting/semantik-gtk
-        tag: '1.4.0'
-        commit: 34b53e2b58d733dcb768382c66e371bc04a88e95
+        tag: 1.5.0
+        commit: 308ca5298619e6d5ed9f92e0d57ddc9252c854b4
         x-checker-data: {type: git, tag-pattern: '^([\d.]+)$'}
