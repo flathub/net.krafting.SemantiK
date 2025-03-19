@@ -15,6 +15,11 @@ add-extensions:
     subdirectories: true
     no-autodownload: true
     autodelete: true
+  net.krafting.SemantiK.Lang.French:
+    directory: share/extra/French
+    no-autodownload: false
+    bundle: true
+    autodelete: true
 
 cleanup-commands:
   - mkdir -p /app/share/extra
@@ -24,37 +29,37 @@ modules:
     buildsystem: cmake-ninja
     builddir: true
     config-opts:
-      - -DBUILD_SHARED_LIBS=ON
-      - -DBUILD_TESTING=OFF
+    - -DBUILD_SHARED_LIBS=ON
+    - -DBUILD_TESTING=OFF
     sources:
       - type: git
         url: https://github.com/OpenMathLib/OpenBLAS
-        tag: v0.3.26
-        commit: 6c77e5e314474773a7749357b153caba4ec3817d
+        tag: 'v0.3.29'
+        commit: 8795fc7985635de1ecf674b87e2008a15097ffab
 
   - name: LAPACK
     buildsystem: cmake-ninja
     builddir: true
     config-opts:
-      - -DCMAKE_BUILD_TYPE=Release
-      - -DBUILD_SHARED_LIBS=ON
-      - -DBUILD_TESTING=OFF
-      - -DCMAKE_Fortran_COMPILER=gfortran
-      - -DLAPACKE=ON
-      - -DCBLAS=ON
+    - -DCMAKE_BUILD_TYPE=Release
+    - -DBUILD_SHARED_LIBS=ON
+    - -DBUILD_TESTING=OFF
+    - -DCMAKE_Fortran_COMPILER=gfortran
+    - -DLAPACKE=ON
+    - -DCBLAS=ON
     sources:
       - type: git
         url: https://github.com/Reference-LAPACK/lapack.git
-        tag: v3.12.0
-        commit: 04b044e020a3560ccfa9988c8a80a1fb7083fc2e
+        tag: 'v3.12.1'
+        commit: 6ec7f2bc4ecf4c4a93496aa2fa519575bc0e39ca
 
   - name: meson-python
     buildsystem: meson
     sources:
       - type: git
         url: https://github.com/mesonbuild/meson-python
-        tag: 0.15.0
-        commit: e847bdd918ba6686d9b0502e9ee6d83d5145ae84
+        tag: '0.17.1'
+        commit: b43ffcd0c64fa9ef97e99c15ac3f1f43d9572324
 
   - python3-pyproject_metadata.json
 
@@ -72,16 +77,11 @@ modules:
       - install -Dm755 SemantiK.py /app/bin/SemantiK.py
       - cp -r locales /app/
       - cp -r utils /app/bin/
-      - install -Dm 0644 word_lists/French/words.list  /app/default/French/words.list
-      - install -Dm 0644 frWac_non_lem_no_postag_no_phrase_200_cbow_cut100.bin  /app/default/French/model.bin
       - install -Dm 0644 net.krafting.SemantiK.desktop  /app/share/applications/net.krafting.SemantiK.desktop
       - install -Dm 0644 net.krafting.SemantiK.metainfo.xml  /app/share/metainfo/net.krafting.SemantiK.metainfo.xml
       - install -Dm 0644 images/net.krafting.SemantiK.png /app/share/icons/hicolor/256x256/apps/net.krafting.SemantiK.png
       - install -Dm 0644 images/language-symbolic.svg /app/share/icons/hicolor/symbolic/apps/language-symbolic.svg
     sources:
-      - type: file
-        url: https://embeddings.net/embeddings/frWac_non_lem_no_postag_no_phrase_200_cbow_cut100.bin
-        sha256: d51f3259d1f6fe12155a447623a82695c6d72916b1b61e150e2715c034b6c880
       - type: git
         url: https://gitlab.com/Krafting/semantik-gtk
         tag: 1.6.0
