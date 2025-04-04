@@ -13,7 +13,6 @@ add-extensions:
   net.krafting.SemantiK.Lang.French:
     directory: share/extra/French
     no-autodownload: false
-    bundle: true
     autodelete: true
   net.krafting.SemantiK.Lang:
     directory: share/extra
