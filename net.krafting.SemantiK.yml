@@ -10,15 +10,15 @@ finish-args:
   - --socket=fallback-x11
 
 add-extensions:
-  net.krafting.SemantiK.Lang:
-    directory: share/extra
-    subdirectories: true
-    no-autodownload: true
-    autodelete: true
   net.krafting.SemantiK.Lang.French:
     directory: share/extra/French
     no-autodownload: false
     bundle: true
+    autodelete: true
+  net.krafting.SemantiK.Lang:
+    directory: share/extra
+    subdirectories: true
+    no-autodownload: true
     autodelete: true
 
 cleanup-commands:
