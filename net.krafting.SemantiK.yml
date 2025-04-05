@@ -16,13 +16,11 @@ add-extensions:
     no-autodownload: true
     autodelete: true
   net.krafting.SemantiK.Lang.French:
-    directory: /app/share/extra/French
     no-autodownload: false
     autodelete: true
 
     
 cleanup-commands:
-  - mkdir -p /app/share/extra/French
   - mkdir -p /app/share/extra
 
 modules:
