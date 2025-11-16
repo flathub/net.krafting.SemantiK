@@ -66,10 +66,6 @@ modules:
         tag: '4.4.0'
         commit: ee2642b4fa26e689ba4595067504668bc7a89016
 
-  - python3-requests.json
-
-  - python3-unidecode.json
-
   - name: SemantiK
     buildsystem: simple
     build-commands:
