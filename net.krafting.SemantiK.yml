@@ -69,7 +69,19 @@ modules:
 
   - python3-pybind11.json
 
-  - python3-gensim.json
+  - python3-scipy.json
+
+  - python3-smart_open.json
+
+  - name: Gensim
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-build-isolation --prefix=/app .
+    sources:
+      - type: git
+        url: https://github.com/piskvorky/gensim
+        tag: '4.4.0'
+        commit: ee2642b4fa26e689ba4595067504668bc7a89016
 
   - name: SemantiK
     buildsystem: simple
