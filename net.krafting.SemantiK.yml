@@ -8,15 +8,14 @@ finish-args:
   - --device=dri
   - --socket=wayland
   - --socket=fallback-x11
+add-extensions:
+  - net.krafting.SemantiK.Lang.French
 
 add-extensions:
   net.krafting.SemantiK.Lang:
     directory: share/extra
     subdirectories: true
     no-autodownload: true
-    autodelete: true
-  net.krafting.SemantiK.Lang.French:
-    no-autodownload: false
     autodelete: true
 
     
