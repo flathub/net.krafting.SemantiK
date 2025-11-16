@@ -1,6 +1,6 @@
 app-id: net.krafting.SemantiK
 runtime: org.gnome.Platform
-runtime-version: '48'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 command: SemantiK.py
 finish-args:
@@ -19,7 +19,7 @@ add-extensions:
     no-autodownload: false
     autodelete: true
 
-    
+
 cleanup-commands:
   - mkdir -p /app/share/extra
 
@@ -28,37 +28,38 @@ modules:
     buildsystem: cmake-ninja
     builddir: true
     config-opts:
-    - -DBUILD_SHARED_LIBS=ON
-    - -DBUILD_TESTING=OFF
+      - -DBUILD_SHARED_LIBS=ON
+      - -DDYNAMIC_ARCH=ON
+      # - -DTARGET=ARMV8
+      - -DBUILD_TESTING=OFF
     sources:
-      - type: git
-        url: https://github.com/OpenMathLib/OpenBLAS
-        tag: 'v0.3.29'
-        commit: 8795fc7985635de1ecf674b87e2008a15097ffab
+      - type: archive
+        url: https://github.com/OpenMathLib/OpenBLAS/releases/download/v0.3.29/OpenBLAS-0.3.29.tar.gz
+        sha512: 046316b4297460bffca09c890ecad17ea39d8b3db92ff445d03b547dd551663d37e40f38bce8ae11e2994374ff01e622b408da27aa8e40f4140185ee8f001a60
 
-  - name: LAPACK
-    buildsystem: cmake-ninja
-    builddir: true
-    config-opts:
-    - -DCMAKE_BUILD_TYPE=Release
-    - -DBUILD_SHARED_LIBS=ON
-    - -DBUILD_TESTING=OFF
-    - -DCMAKE_Fortran_COMPILER=gfortran
-    - -DLAPACKE=ON
-    - -DCBLAS=ON
-    sources:
-      - type: git
-        url: https://github.com/Reference-LAPACK/lapack.git
-        tag: 'v3.12.1'
-        commit: 6ec7f2bc4ecf4c4a93496aa2fa519575bc0e39ca
+  # - name: LAPACK
+  #   buildsystem: cmake-ninja
+  #   builddir: true
+  #   config-opts:
+  #     - -DCMAKE_BUILD_TYPE=Release
+  #     - -DBUILD_SHARED_LIBS=ON
+  #     - -DBUILD_TESTING=OFF
+  #     - -DCMAKE_Fortran_COMPILER=gfortran
+  #     - -DLAPACKE=ON
+  #     - -DCBLAS=ON
+  #   sources:
+  #     - type: git
+  #       url: https://github.com/Reference-LAPACK/lapack.git
+  #       tag: v3.12.1
+  #       commit: 6ec7f2bc4ecf4c4a93496aa2fa519575bc0e39ca
 
   - name: meson-python
     buildsystem: meson
     sources:
       - type: git
         url: https://github.com/mesonbuild/meson-python
-        tag: '0.17.1'
-        commit: b43ffcd0c64fa9ef97e99c15ac3f1f43d9572324
+        tag: '0.18.0'
+        commit: e094949f466ae69043fcec3ec68b41ace900ed97
 
   - python3-pyproject_metadata.json
 
@@ -68,7 +69,19 @@ modules:
 
   - python3-pybind11.json
 
-  - python3-gensim.json
+  - python3-scipy.json
+
+  - python3-smart_open.json
+
+  - name: Gensim
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-build-isolation --prefix=/app .
+    sources:
+      - type: git
+        url: https://github.com/piskvorky/gensim
+        tag: '4.4.0'
+        commit: ee2642b4fa26e689ba4595067504668bc7a89016
 
   - name: SemantiK
     buildsystem: simple
@@ -78,11 +91,11 @@ modules:
       - cp -r utils /app/bin/
       - install -Dm 0644 net.krafting.SemantiK.desktop  /app/share/applications/net.krafting.SemantiK.desktop
       - install -Dm 0644 net.krafting.SemantiK.metainfo.xml  /app/share/metainfo/net.krafting.SemantiK.metainfo.xml
-      - install -Dm 0644 images/net.krafting.SemantiK.png /app/share/icons/hicolor/256x256/apps/net.krafting.SemantiK.png
-      - install -Dm 0644 images/language-symbolic.svg /app/share/icons/hicolor/symbolic/apps/language-symbolic.svg
+      - install -Dm 0644 images/net.krafting.SemantiK.svg /app/share/icons/hicolor/scalable/apps/net.krafting.SemantiK.svg
+      - install -Dm 0644 images/icons-symbolic/* /app/share/icons/hicolor/scalable/apps/
     sources:
       - type: git
         url: https://gitlab.com/Krafting/semantik-gtk
-        tag: 1.6.0-0405
-        commit: 5c369e8e24364cab9d3c77d9170ba472d180db4a
+        tag: 1.7.3
+        commit: c918d4a9712633baca5f7dfbc01c932325fe43df
         x-checker-data: {type: git, tag-pattern: '^([\d.]+)$'}
