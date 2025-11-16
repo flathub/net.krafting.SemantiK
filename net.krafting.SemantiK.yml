@@ -18,8 +18,8 @@ add-extensions:
   net.krafting.SemantiK.Lang.French:
     directory: share/extra/French
     no-autodownload: false
-  net.krafting.SemantiK.Lang.French:
-    directory: share/extra/French
+  net.krafting.SemantiK.Lang.English:
+    directory: share/extra/English
     no-autodownload: false
 
     
