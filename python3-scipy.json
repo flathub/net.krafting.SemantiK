@@ -1,0 +1,14 @@
+{
+    "name": "python3-scipy",
+    "buildsystem": "simple",
+    "build-commands": [
+        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"scipy\" --no-build-isolation"
+    ],
+    "sources": [
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/0a/ca/d8ace4f98322d01abcd52d381134344bf7b431eba7ed8b42bdea5a3c2ac9/scipy-1.16.3.tar.gz",
+            "sha256": "01e87659402762f43bd2fee13370553a17ada367d42e7487800bf2916535aecb"
+        }
+    ]
+}
