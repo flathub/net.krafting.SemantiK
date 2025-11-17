@@ -1,6 +1,6 @@
 app-id: net.krafting.SemantiK
 runtime: org.gnome.Platform
-runtime-version: '48'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 command: SemantiK.py
 finish-args:
@@ -21,7 +21,7 @@ add-extensions:
   net.krafting.SemantiK.Lang.English:
     no-autodownload: true
 
-    
+
 cleanup-commands:
   - mkdir -p /app/share/extra
 
@@ -93,11 +93,11 @@ modules:
       - cp -r utils /app/bin/
       - install -Dm 0644 net.krafting.SemantiK.desktop  /app/share/applications/net.krafting.SemantiK.desktop
       - install -Dm 0644 net.krafting.SemantiK.metainfo.xml  /app/share/metainfo/net.krafting.SemantiK.metainfo.xml
-      - install -Dm 0644 images/net.krafting.SemantiK.png /app/share/icons/hicolor/256x256/apps/net.krafting.SemantiK.png
-      - install -Dm 0644 images/language-symbolic.svg /app/share/icons/hicolor/symbolic/apps/language-symbolic.svg
+      - install -Dm 0644 images/net.krafting.SemantiK.svg /app/share/icons/hicolor/scalable/apps/net.krafting.SemantiK.svg
+      - install -Dm 0644 images/icons-symbolic/* /app/share/icons/hicolor/scalable/apps/
     sources:
       - type: git
         url: https://gitlab.com/Krafting/semantik-gtk
-        tag: 1.6.0-0405
-        commit: 5c369e8e24364cab9d3c77d9170ba472d180db4a
+        tag: 1.7.3
+        commit: c918d4a9712633baca5f7dfbc01c932325fe43df
         x-checker-data: {type: git, tag-pattern: '^([\d.]+)$'}
