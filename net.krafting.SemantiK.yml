@@ -31,6 +31,7 @@ modules:
     builddir: true
     config-opts:
     - -DBUILD_SHARED_LIBS=ON
+    - -DDYNAMIC_ARCH=ON
     - -DBUILD_TESTING=OFF
     sources:
       - type: git
@@ -38,21 +39,21 @@ modules:
         tag: 'v0.3.29'
         commit: 8795fc7985635de1ecf674b87e2008a15097ffab
 
-  - name: LAPACK
-    buildsystem: cmake-ninja
-    builddir: true
-    config-opts:
-    - -DCMAKE_BUILD_TYPE=Release
-    - -DBUILD_SHARED_LIBS=ON
-    - -DBUILD_TESTING=OFF
-    - -DCMAKE_Fortran_COMPILER=gfortran
-    - -DLAPACKE=ON
-    - -DCBLAS=ON
-    sources:
-      - type: git
-        url: https://github.com/Reference-LAPACK/lapack.git
-        tag: 'v3.12.1'
-        commit: 6ec7f2bc4ecf4c4a93496aa2fa519575bc0e39ca
+  # - name: LAPACK
+  #   buildsystem: cmake-ninja
+  #   builddir: true
+  #   config-opts:
+  #   - -DCMAKE_BUILD_TYPE=Release
+  #   - -DBUILD_SHARED_LIBS=ON
+  #   - -DBUILD_TESTING=OFF
+  #   - -DCMAKE_Fortran_COMPILER=gfortran
+  #   - -DLAPACKE=ON
+  #   - -DCBLAS=ON
+  #   sources:
+  #     - type: git
+  #       url: https://github.com/Reference-LAPACK/lapack.git
+  #       tag: 'v3.12.1'
+  #       commit: 6ec7f2bc4ecf4c4a93496aa2fa519575bc0e39ca
 
   - name: meson-python
     buildsystem: meson
