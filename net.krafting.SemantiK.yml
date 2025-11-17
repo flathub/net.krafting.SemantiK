@@ -13,11 +13,13 @@ add-extensions:
   net.krafting.SemantiK.Lang:
     directory: share/extra
     subdirectories: true
-    no-autodownload: true
-    autodelete: true
-  net.krafting.SemantiK.Lang.French:
     no-autodownload: false
     autodelete: true
+  net.krafting.SemantiK.Lang.French:
+    directory: share/extra/French
+    no-autodownload: false
+  net.krafting.SemantiK.Lang.English:
+    no-autodownload: true
 
 
 cleanup-commands:
