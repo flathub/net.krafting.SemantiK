@@ -19,8 +19,7 @@ add-extensions:
     directory: share/extra/French
     no-autodownload: false
   net.krafting.SemantiK.Lang.English:
-    directory: share/extra/English
-    no-autodownload: false
+    no-autodownload: true
 
     
 cleanup-commands:
