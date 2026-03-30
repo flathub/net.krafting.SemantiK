@@ -60,7 +60,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/mesonbuild/meson-python
-        tag: '0.18.0'
+        tag: 0.18.0
         commit: e094949f466ae69043fcec3ec68b41ace900ed97
 
   - python3-pyproject_metadata.json
@@ -82,7 +82,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/piskvorky/gensim
-        tag: '4.4.0'
+        tag: 4.4.0
         commit: ee2642b4fa26e689ba4595067504668bc7a89016
 
   - name: SemantiK
@@ -98,6 +98,6 @@ modules:
     sources:
       - type: git
         url: https://gitlab.com/Krafting/semantik-gtk
-        tag: 1.7.3
-        commit: c918d4a9712633baca5f7dfbc01c932325fe43df
+        tag: 1.7.4
+        commit: 86870d6b62730c303e4b590984809cd3a3fd6b45
         x-checker-data: {type: git, tag-pattern: '^([\d.]+)$'}
