@@ -30,13 +30,13 @@ modules:
     buildsystem: cmake-ninja
     builddir: true
     config-opts:
-    - -DBUILD_SHARED_LIBS=ON
-    - -DDYNAMIC_ARCH=ON
-    - -DBUILD_TESTING=OFF
+      - -DBUILD_SHARED_LIBS=ON
+      - -DDYNAMIC_ARCH=ON
+      - -DBUILD_TESTING=OFF
     sources:
       - type: git
         url: https://github.com/OpenMathLib/OpenBLAS
-        tag: 'v0.3.34'
+        tag: v0.3.34
         commit: e0166008be8e466242aa76b2ff75ce3f0fbf574a
 
   - name: meson-python
@@ -82,6 +82,6 @@ modules:
     sources:
       - type: git
         url: https://gitlab.com/Krafting/semantik-gtk
-        tag: 1.7.4
-        commit: 86870d6b62730c303e4b590984809cd3a3fd6b45
+        tag: 1.7.5
+        commit: 55d5102121fd60db1a8db882e26531a852186965
         x-checker-data: {type: git, tag-pattern: '^([\d.]+)$'}
