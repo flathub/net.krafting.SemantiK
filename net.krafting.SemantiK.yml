@@ -16,7 +16,6 @@ add-extensions:
     no-autodownload: true
     autodelete: true
   net.krafting.SemantiK.Lang.French:
-    directory: share/extra/French
     no-autodownload: false
   net.krafting.SemantiK.Lang.English:
     no-autodownload: true
@@ -24,6 +23,7 @@ add-extensions:
 
 cleanup-commands:
   - mkdir -p /app/share/extra
+  - mkdir -p /app/share/extra/French
 
 modules:
   - name: OpenBLAS
