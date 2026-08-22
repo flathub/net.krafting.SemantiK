@@ -24,6 +24,7 @@ add-extensions:
 
 cleanup-commands:
   - mkdir -p /app/share/extra
+  - mkdir -p /app/share/extra/French
 
 modules:
   - name: OpenBLAS
