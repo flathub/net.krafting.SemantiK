@@ -7,8 +7,8 @@
     "sources": [
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/0a/ca/d8ace4f98322d01abcd52d381134344bf7b431eba7ed8b42bdea5a3c2ac9/scipy-1.16.3.tar.gz",
-            "sha256": "01e87659402762f43bd2fee13370553a17ada367d42e7487800bf2916535aecb"
+            "url": "https://files.pythonhosted.org/packages/7e/74/66de6258867beb2ef08f35f9f2ac017a52cacd5081714d239ff1a442d458/scipy-1.18.1.tar.gz",
+            "sha256": "52c4b7422442aba924d03ad4019852b08a92e64ea187b933135687bfe2747307"
         }
     ]
 }
